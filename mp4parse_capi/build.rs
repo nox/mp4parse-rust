@@ -32,6 +32,10 @@ extern "C" {
         c
     };
 
+    for (var, value) in std::env::vars() {
+        eprintln!("{}: {}", var, value);
+    }
+
     // Generate mp4parse.h.
     cbindgen::generate_with_config(&crate_dir, config)
         .expect("Could not generate header")
